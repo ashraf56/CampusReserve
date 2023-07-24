@@ -8,12 +8,15 @@ import DetailCollege from "../AllCollege/DetailCollege";
 import Signup from "../Auths/Signup/Signup";
 import Login from "../Auths/Login/Login";
 import Profile from "../UserProfile/Profile";
+import Protected from "./Protected";
+import Errorpage from "../../Errorpage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Body></Body> ,
-      children: [
+      errorElement:<Errorpage></Errorpage>
+,      children: [
 {
   path:'/',
   element: <Home></Home>
@@ -44,7 +47,9 @@ const router = createBrowserRouter([
 },
 {
   path:'/college/:id',
-  element: <DetailCollege/>
+  element: <Protected>
+    <DetailCollege/>
+  </Protected> 
   , 
   loader: ({params})=> fetch(`http://localhost:3000/college/${params.id}`)
 },

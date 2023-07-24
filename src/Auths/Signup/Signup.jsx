@@ -52,11 +52,10 @@ navigation('/')
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen ">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+     <img src="https://img.freepik.com/free-vector/gdpr-concept-illustration_114360-1028.jpg?w=740&t=st=1690213092~exp=1690213692~hmac=c9441437b005d1b1faa7d66c4cbcce6b5abd424ed2a96d9aed96f21838cccdfa" alt="" srcset="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 
@@ -91,7 +90,7 @@ navigation('/')
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn ">Register</button>
         </div>
       </form>
 

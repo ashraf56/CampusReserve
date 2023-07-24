@@ -33,7 +33,7 @@ const CollegeCard = () => {
 <div className='grid grid-cols-1 gap-y-3'>
 
   <div className="badge  ">
-  <p><span className='text-red-700 font-semibold uppercase'> Fall:</span> {clgs.admissionDates.fall}</p>
+  <p><span className='text-red-700 font-semibold uppercase'> Fall:</span> {clgs.admissionDates?.fall}</p>
   
   </div> 
   <div className="badge  ">

@@ -17,7 +17,7 @@ fetch('http://localhost:3000/college').then(res=> res.json())
 
     return (
         <div>
-            <div className='grid grid-cols-3 m-6 gap-3'>
+            <div className='grid md:grid-cols-1 md:mx-auto lg:grid-cols-3 m-6 gap-3'>
         {
         Col.map(clg => (
           <div key={clg.collegeId} className="card card-compact w-96 bg-base-100 shadow-xl h-full">
