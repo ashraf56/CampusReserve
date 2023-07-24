@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AllCollege = () => {
 let [Col,setCol]=useState([])
 useEffect(()=>{
-fetch('http://localhost:3000/college').then(res=> res.json())
+fetch('https://campusreserve-server.onrender.com/college').then(res=> res.json())
 .then(data => {
   console.log(data);
   setCol(data)

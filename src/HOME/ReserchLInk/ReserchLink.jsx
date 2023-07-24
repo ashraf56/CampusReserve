@@ -6,7 +6,7 @@ const ReserchLink = () => {
     let {data:reserchlink=[],refetch}=useQuery( 
         ['allcollege'],
        async()=>{
-            let res= await axios.get(`http://localhost:3000/college`)
+            let res= await axios.get(`https://campusreserve-server.onrender.com/college`)
             return res.data
             
                 })

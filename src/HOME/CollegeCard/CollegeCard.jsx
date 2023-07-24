@@ -10,7 +10,7 @@ const CollegeCard = () => {
     let {data:clgdata=[],refetch}=useQuery( 
         ['alluser'],
        async()=>{
-            let res= await axios.get(`http://localhost:3000/allcollege`)
+            let res= await axios.get(`https://campusreserve-server.onrender.com/allcollege`)
             return res.data
             
                 })
@@ -37,12 +37,12 @@ const CollegeCard = () => {
   
   </div> 
   <div className="badge  ">
-  <p> <span className='text-red-700 font-semibold uppercase'> spring:</span> {clgs.admissionDates.spring}</p>
+  <p> <span className='text-red-700 font-semibold uppercase'> spring:</span> {clgs.admissionDates?.spring}</p>
   
   </div> 
 <div className="badge ">
  
-<p> <span className='text-red-700 font-semibold uppercase'> summer:</span>{clgs.admissionDates.summer}</p>
+<p> <span className='text-red-700 font-semibold uppercase'> summer:</span>{clgs.admissionDates?.summer}</p>
 </div>
  </div> 
 
