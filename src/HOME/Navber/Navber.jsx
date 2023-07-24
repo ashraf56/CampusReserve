@@ -64,7 +64,7 @@ const Navber = () => {
           <Link to='/admission' >Admission</Link>
         </li>
         <li>
-          <Link to='/Myclgt' >My College</Link>
+          <Link to='/Myclg' >My College</Link>
         </li>
 <li>
         { user?.displayName && <Link to={`/profile`} >{user.displayName}</Link> }
