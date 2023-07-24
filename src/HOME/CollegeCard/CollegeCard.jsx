@@ -19,10 +19,10 @@ const CollegeCard = () => {
         <div className='my-12'>
 <h1 className='md:text-4xl uppercase text-center font-extrabold py-20'>Elite Institutions of Learning</h1>
 
-            <div className='grid justify-center gap-y-3 md:grid-cols-3'>
+            <div className='grid justify-center gap-y-3 lg:grid-cols-2 xl:grid-cols-3'>
                 {
                     clgdata.map(clgs=> (
-<div className="card w-96 bg-base-100 shadow-xl image-full">
+<div className="card md:w-96 bg-base-100 shadow-xl image-full">
   <figure><img src={clgs.collegeImage} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{clgs.collegeName}</h2>
