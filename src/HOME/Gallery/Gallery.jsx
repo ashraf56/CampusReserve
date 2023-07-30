@@ -34,7 +34,8 @@ const images = [
 
 return (
 <div className='container mx-auto my-20'> 
-<h1 className=' md:text-4xl uppercase text-center font-extrabold py-9' >Capture the Moment: College Graduation Gallery</h1>
+<h1 className=' md:text-4xl uppercase text-center font-extrabold pt-9' >Capture the Moment: College Graduation Gallery</h1>
+<p className=' text-md  text-center  py-5 pb-8 px-5'>Capturing Moments of Triumph and Success. Step into the inspiring world of academic accomplishments as we celebrate the hard work, dedication, and joy of graduates crossing the threshold into a promising future.</p>
 
     <ImageGallery thumbnailPosition='left' showFullscreenButton={false}  items={images} />
 </div>

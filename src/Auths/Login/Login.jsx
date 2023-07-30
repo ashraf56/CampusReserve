@@ -32,7 +32,7 @@ const Login = () => {
             const user = result.user;
             let info={name:user.displayName , email:user.email, photoURL:user.photoURL ,adress:'' , Institute:'' }
         
-            fetch('https://campusreserve-server.onrender.com/alluser',{
+            fetch('http://localhost:3000/alluser',{
                 method:"POST"
                 ,headers:{
                   'content-type': 'application/json'

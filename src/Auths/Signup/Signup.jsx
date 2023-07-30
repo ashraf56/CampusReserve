@@ -17,9 +17,9 @@ AllUser(data.email,data.password)
     const user = userCredential.user;
    updateUser(data.displayName , data.photoURL)
    .then(() => {
-    let info={name:data.displayName , email:data.email , photoURL:data.photoURL, adress:'' , Institute:''}
+    let info={name:data.displayName , email:data.email , photoURL:data.photoURL, adress:'' , institute:''}
     
-              fetch('https://campusreserve-server.onrender.com/alluser',{
+              fetch('http://localhost:3000/alluser',{
                 method:"POST"
                 ,headers:{
                   'content-type': 'application/json'

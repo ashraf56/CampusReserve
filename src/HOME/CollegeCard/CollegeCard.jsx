@@ -8,17 +8,18 @@ const CollegeCard = () => {
 
     let {user}=useContext(AuthService)
     let {data:clgdata=[],refetch}=useQuery( 
-        ['alluser'],
+        ['allcollege'],
        async()=>{
-            let res= await axios.get(`https://campusreserve-server.onrender.com/allcollege`)
+            let res= await axios.get(`http://localhost:3000/allcollege`)
             return res.data
             
                 })
 
     return (
         <div className='my-12'>
-<h1 className='md:text-4xl uppercase text-center font-extrabold py-20'>Elite Institutions of Learning</h1>
-
+<h1 className='md:text-4xl uppercase text-center font-extrabold pt-20'>Elite Institutions of Learning</h1>
+<p className=' text-center text-md py-5 pb-8 px-4'>
+Institutions form the backbone of society, providing essential structures that govern, educate, and support communities on various levels. Ranging from governmental bodies and educational establishments to non-profit organizations and research centers, institutions play a vital role in shaping our collective future.</p>
             <div className='grid justify-center gap-y-3 lg:grid-cols-2 xl:grid-cols-3'>
                 {
                     clgdata.map(clgs=> (
@@ -50,17 +51,17 @@ const CollegeCard = () => {
      <h1 className='font-bold '>Events</h1>
      <ul className=" list-decimal rounded-box">
      
-  <li><a>{clgs.events[0]}</a></li>
-  <li><a>{clgs.events[1]}</a></li>
-  <li><a>{clgs.events[2]}</a></li></ul>
+  <li><a>{clgs?.events ? clgs?.events[0]:''}</a></li>
+  <li><a>{clgs?.events ? clgs?.events[1]:''}</a></li>
+  <li><a>{clgs?.events ? clgs?.events[2]:''}</a></li></ul>
 </div>
 
 <div>
 <h1 className=" font-bold uppercase"> Top sports</h1>
       <ul className="steps steps-horizontal  w-full rounded-box">
-  <li  className="step step-primary  "><a>{clgs.sports.categories[0]}</a></li>
-  <li  className="step  step-warning"><a>{clgs.sports.categories[1]}</a></li>
-  <li  className="step step-success  "><a>{clgs.sports.categories[2]}</a></li>
+  <li  className="step step-primary  "><a>{clgs.sports?.categories[0]}</a></li>
+  <li  className="step  step-warning"><a>{clgs.sports?.categories[1]}</a></li>
+  <li  className="step step-success  "><a>{clgs.sports?.categories[2]}</a></li>
 
 </ul>
 

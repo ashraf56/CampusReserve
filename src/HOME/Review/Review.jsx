@@ -22,7 +22,7 @@ const Review = () => {
   let {data:reviews=[],refetch}=useQuery( 
     ['allcollege'],
    async()=>{
-        let res= await axios.get(`https://campusreserve-server.onrender.com/college`)
+        let res= await axios.get(`http://localhost:3000/college`)
         return res.data
         
             })

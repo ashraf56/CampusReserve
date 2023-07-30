@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import imgs from '../../assets/education.png'
 import { Link } from 'react-router-dom';
 import { AuthService } from '../../Auths/AuthProvider/AuthProvider';
+import useAlluser from '../../Hooks/useAlluser';
 const Navber = () => {
   let {user,Signout}=useContext(AuthService);
-
   let Logout=()=>{
     Signout()
     .then(() => {
@@ -35,7 +35,12 @@ const Navber = () => {
           <Link to='/Myclg' >My College</Link>
         </li>
 <li>
-        { user?.displayName && <Link to={`/profile`} >{user.displayName}</Link> }
+        { user?.displayName && 
+       
+            <Link to={`/profilepage`}>{user?.displayName}</Link>
+ 
+       
+        }
         </li>
 
         <li>
@@ -67,7 +72,11 @@ const Navber = () => {
           <Link to='/Myclg' >My College</Link>
         </li>
 <li>
-        { user?.displayName && <Link to={`/profile`} >{user.displayName}</Link> }
+{ user?.displayName && 
+       
+            <Link to={`/profilepage`}>{user?.displayName}</Link>
+    
+        }
         </li>
 
         <li>

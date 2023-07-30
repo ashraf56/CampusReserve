@@ -9,7 +9,8 @@ import Signup from "../Auths/Signup/Signup";
 import Login from "../Auths/Login/Login";
 import Profile from "../UserProfile/Profile";
 import Protected from "./Protected";
-import Errorpage from "../../Errorpage";
+import Errorpage from "../Errorpage";
+import Profilepage from "../UserProfile/Profilepage";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
 {
   path:'/profile',
   element: <Profile/>,
+},
+{
+  path:'/profilepage',
+  element: <Profilepage/>,
 },
 {
   path:'/admission',
@@ -51,7 +56,7 @@ const router = createBrowserRouter([
     <DetailCollege/>
   </Protected> 
   , 
-  loader: ({params})=> fetch(`https://campusreserve-server.onrender.com/college/${params.id}`)
+  loader: ({params})=> fetch(`http://localhost:3000/college/${params.id}`)
 },
 
       ]
