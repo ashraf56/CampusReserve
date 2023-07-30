@@ -8,7 +8,7 @@ const Profilepage = () => {
 
 
     let {user}=useContext(AuthService)
-    let url=`http://localhost:3000/alluser/${user?.email}`
+    let url=`https://campusreserve-server.onrender.com/alluser/${user?.email}`
         let {data:mydata=[],refetch}=useQuery( 
             ['alluser'],
            async()=>{

@@ -19,7 +19,7 @@ AllUser(data.email,data.password)
    .then(() => {
     let info={name:data.displayName , email:data.email , photoURL:data.photoURL, adress:'' , institute:''}
     
-              fetch('http://localhost:3000/alluser',{
+              fetch('https://campusreserve-server.onrender.com/alluser',{
                 method:"POST"
                 ,headers:{
                   'content-type': 'application/json'

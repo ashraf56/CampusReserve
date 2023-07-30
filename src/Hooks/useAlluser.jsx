@@ -9,7 +9,7 @@ const useAlluser = () => {
     let {data:userdata=[],refetch}=useQuery( 
         ['alluser'],
        async()=>{
-            let res= await axios.get(`http://localhost:3000/alluser`)
+            let res= await axios.get(`https://campusreserve-server.onrender.com/alluser`)
             
             return res.data
             

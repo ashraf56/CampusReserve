@@ -10,7 +10,7 @@ const Profile = () => {
 
 
     let {user}=useContext(AuthService)
-let url=`http://localhost:3000/alluser/${user?.email}`
+let url=`https://campusreserve-server.onrender.com/alluser/${user?.email}`
     let {data:mydata=[],refetch}=useQuery( 
         ['alluser'],
        async()=>{
@@ -34,7 +34,7 @@ console.log(data.user);
 
       }).then((result) => {
        if (result.isConfirmed) {
-    fetch(`http://localhost:3000/Oneuser/${user?.email}`,{
+    fetch(`https://campusreserve-server.onrender.com/Oneuser/${user?.email}`,{
   method:"PUT",
   headers:{
     'content-type':'application/json'
@@ -59,7 +59,7 @@ console.log(data.user);
 
 let updates=(user,event)=>{
 
-    fetch(`http://localhost:3000/alluser/${user._id}`,{
+    fetch(`https://campusreserve-server.onrender.com/alluser/${user._id}`,{
         method:"PUT",
         headers: {
             'content-type':'application/json'

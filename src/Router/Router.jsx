@@ -56,7 +56,7 @@ const router = createBrowserRouter([
     <DetailCollege/>
   </Protected> 
   , 
-  loader: ({params})=> fetch(`http://localhost:3000/college/${params.id}`)
+  loader: ({params})=> fetch(`https://campusreserve-server.onrender.com/college/${params.id}`)
 },
 
       ]

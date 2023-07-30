@@ -10,7 +10,7 @@ const CollegeCard = () => {
     let {data:clgdata=[],refetch}=useQuery( 
         ['allcollege'],
        async()=>{
-            let res= await axios.get(`http://localhost:3000/allcollege`)
+            let res= await axios.get(`https://campusreserve-server.onrender.com/allcollege`)
             return res.data
             
                 })
