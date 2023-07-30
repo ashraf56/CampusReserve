@@ -1,10 +1,9 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext,  } from 'react';
 import { AuthService } from '../Auths/AuthProvider/AuthProvider';
 import { useQuery } from 'react-query';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import { useLoaderData } from 'react-router-dom';
 
 const Profile = () => {
 
@@ -112,6 +111,12 @@ let updates=(user,event)=>{
         <span className='label-text'>Adress</span>
     </label>
 <input type="text" placeholder="N/A" {...register('adress')} className="input w-full input-bordered max-w-lg" defaultValue={singleus.adress}  />
+</div>
+<div className='form-control'>
+    <label htmlFor="" className='label'>
+        <span className='label-text'>Photo</span>
+    </label>
+<input type="text" placeholder="N/A" {...register('photoURL')} className="input w-full input-bordered max-w-lg" defaultValue={singleus.photoURL}  />
 </div>
 <div className='form-control'>
     <label htmlFor="" className='label'>

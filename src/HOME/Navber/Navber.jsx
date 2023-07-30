@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import imgs from '../../assets/education.png'
 import { Link } from 'react-router-dom';
 import { AuthService } from '../../Auths/AuthProvider/AuthProvider';
-import useAlluser from '../../Hooks/useAlluser';
 const Navber = () => {
   let {user,Signout}=useContext(AuthService);
   let Logout=()=>{

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthService } from '../Auths/AuthProvider/AuthProvider';
 import { useQuery } from 'react-query';
 import axios from 'axios';
+import { FaLocationDot, FaSchool , FaEnvelope} from "react-icons/fa6";
 
 const Profilepage = () => {
 
@@ -26,66 +27,24 @@ const Profilepage = () => {
 
      <div>
 
-<div class="flex items-center h-screen w-full justify-center">
-
-<div class="max-w-xs">
-    <div class="bg-white shadow-xl rounded-lg py-3">
-    <div className="avatar ">
-  <div className="w-24 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src={md.photoURL}  alt="Movie"/>
-
-  </div>
-</div>
-        <div class="p-2">
-            <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Joh Doe</h3>
-            <div class="text-center text-gray-400 text-xs font-semibold">
-                <p>Web Developer</p>
-            </div>
-            <table class="text-xs my-3">
-                <tbody><tr>
-                    <td class="px-2 py-2 text-gray-500 font-semibold">Address</td>
-                    <td class="px-2 py-2">Chatakpur-3, Dhangadhi Kailali</td>
-                </tr>
-                <tr>
-                    <td class="px-2 py-2 text-gray-500 font-semibold">Phone</td>
-                    <td class="px-2 py-2">+977 9955221114</td>
-                </tr>
-                <tr>
-                    <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
-                    <td class="px-2 py-2">john@exmaple.com</td>
-                </tr>
-            </tbody></table>
-
-            <div class="text-center my-3">
-                <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">View Profile</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-</div>
 
 
 
-
-
-       <div className="card card-side w-full bg-base-100 shadow-xl  ">
- 
- 
- 
+<div className="hero min-h-screen card shadow-md bg-gradient-to-r from-[#456fe8] to-[#19b0ec] ">
+  <div className="hero-content flex-col w-full lg:flex-row-reverse">
+   
+    <img src={md.photoURL} className='lg:rounded-s-full w-3/5'  />
     
- 
-      <div className="card-body ">
-    <h2 className="card-title">{md.name}</h2>
-    <p>adress: {md.adress}</p>
-    <p>institute: {md.institute}</p> 
-    <p>{md.email}</p> 
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary"><Link to={'/profile'} >Update Now</Link></button>
+    <div className='w-3/5 card-body text-white'>
+      <h1 className="text-5xl font-bold">{md.name}</h1>
+      <p className='pt-6 flex text-lg uppercase '> <span className='text-md pe-2'><FaLocationDot/>  </span>     {md.adress}</p>
+      <p className=' py-2 flex text-lg uppercase '> <span className='text-md pe-2'><FaEnvelope/>  </span>     {md.email}</p>
+      <p className=' pb-6 flex text-lg uppercase '> <span className='text-md pe-2'><FaSchool/>  </span>     {md.institute}</p>
+      <button className="btn"><Link to={'/profile'} >Update Now</Link></button>
     </div>
   </div>
-</div>        
+</div>
+            
        
      </div>
 
