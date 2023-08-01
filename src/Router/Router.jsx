@@ -11,6 +11,7 @@ import Profile from "../UserProfile/Profile";
 import Protected from "./Protected";
 import Errorpage from "../Errorpage";
 import Profilepage from "../UserProfile/Profilepage";
+import Apply from "../Admission/Apply";
 
 const router = createBrowserRouter([
     {
@@ -35,12 +36,18 @@ const router = createBrowserRouter([
   element: <Profilepage/>,
 },
 {
+  path:'/apply/:id',
+  element: <Apply/>,
+  loader: ({params})=> fetch(`https://campusreserve-server.onrender.com/college/${params.id}`)
+
+},
+{
   path:'/admission',
-  element: <Admission/>
+  element: <Protected><Admission/></Protected>
 },
 {
   path:'/Myclg',
-  element: <Mycollege/>
+  element: <Protected><Mycollege/> </Protected>
 },
 {
   path:'/Signup',

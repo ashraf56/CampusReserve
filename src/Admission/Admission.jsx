@@ -1,10 +1,47 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useContext } from 'react';
+import { useQuery } from 'react-query';
+import { AuthService } from '../Auths/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
+import Apply from './Apply';
 
 const Admission = () => {
+    let {user}=useContext(AuthService)
+    let {data:allclgdata=[],refetch}=useQuery( 
+        ['college'],
+       async()=>{
+            let res= await axios.get(`https://campusreserve-server.onrender.com/college`)
+            return res.data
+            
+                })
     return (
         <div>
-           <div className='text-center'>
-            <img src="https://img.freepik.com/free-vector/construction-concept-illustration_114360-2764.jpg?w=740&t=st=1690698786~exp=1690699386~hmac=0e4bf85636026fd449e79125050ede693b648727ccf07f0c829c191c43df2ffc" className='w-3/6 mx-auto'/>
+           <div className='mx-auto justify-center mb-5'>
+           {
+            allclgdata.map(cgd=> (<>  
+<div className='mx-auto'>
+    
+    
+<div className="card w-4/5 bg-base-100 shadow-xl my-3 mx-auto">
+  <div className="card-body">
+    <h2 className='card-title font-semibold'>{cgd.collegeName}</h2>
+    <p>{cgd.admissionProcess}</p>
+    <div className="card-actions justify-end items-center">
+
+      <button className="btn ">
+    <Link to={`/apply/${cgd._id}`}>   Apply now</Link>
+      </button>
+    </div>
+    
+  </div>
+</div>
+    
+    
+    </div>
+
+    </>
+            ))
+           }
            </div>
         </div>
     );

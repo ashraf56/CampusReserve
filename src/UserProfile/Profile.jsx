@@ -56,24 +56,6 @@ console.log(data.user);
 
 }
 
-let updates=(user,event)=>{
-
-    fetch(`https://campusreserve-server.onrender.com/alluser/${user._id}`,{
-        method:"PUT",
-        headers: {
-            'content-type':'application/json'
-        }
-        ,body:JSON.stringify(user)
-
-       
-      })
-      .then(res=> res.json())
-.then(data=> {
-    console.log(data);
-   
-})
- 
-}
 
 
     return (
