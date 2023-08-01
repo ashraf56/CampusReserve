@@ -24,7 +24,6 @@ const Apply = () => {
     const { register, formState: { errors }, handleSubmit ,reset ,watch } = useForm();
     const onSubmit = data => {
 
-// console.log(addmissionInfo[0].reviews[0].review);
 
  let userdata={name:data.collegeName , candidateName: data.candidateName, review: addmissionInfo[0]?.reviews[0]?.review ,  subject:data.subject, phone: data.phone , adress:data.adress , photoURL:data.photoURL , dateOfBirth:data.date , candidateEmail:data.email , userMail:mydata[0]?.email }
 

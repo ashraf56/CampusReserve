@@ -3,6 +3,7 @@ import { AuthService } from '../Auths/AuthProvider/AuthProvider';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { FaAddressCard, FaBook, FaCalendar, FaMessage, FaPhone, FaUser } from 'react-icons/fa6';
+import { useForm } from 'react-hook-form';
 
 const Mycollege = () => {
     let {user}=useContext(AuthService)
@@ -15,12 +16,30 @@ const Mycollege = () => {
                 return res.data
                 
                     })
+       
+
+let addReview=(user)=>{
+
+fetch(`https://campusreserve-server.onrender.com/mycollege/${user?.email}`,{
+  method:"PATCH"
+})
+.then(res=> res.json())
+.then(data=>{
+  console.log(data);
+})
+
+}
 
 
                     const [showInputField, setShowInputField] = useState(false);
                     const toggleInputField = () => {
                       setShowInputField(!showInputField);
                     };
+
+ const { register, formState: { errors }, handleSubmit ,reset ,watch } = useForm();
+    const onSubmit = data => {
+      console.log(data);
+    }
 
     return (
         <div className='my-6'>
@@ -57,15 +76,10 @@ const Mycollege = () => {
     <p className='flex'><FaBook className='w-8'/> <span className='ps-2'></span>{myclg.subject}</p>
     <p className='flex'><FaAddressCard className='w-8'/> <span className='ps-1'></span>{myclg.adress}</p>
     <p className='py-3'><span className='font-bold'>Review:</span>{myclg.review}</p>
-    {showInputField && <>
-    <textarea className="textarea textarea-secondary w-4/6" placeholder="Bio"></textarea> 
-    <button className="btn btn-primary  w-4/6" >Send</button>
+   
+        <div className=" justify-start  ">
+        <button className="btn btn-primary  w-4/6"  >Send</button>
 
-    </>
-    
-    }
-        <div className=" justify-start flex ">
-      <span className='px-3'>Give Review</span>  <input type="checkbox" className="toggle"  checked={showInputField}   onChange={toggleInputField}/>
     </div>
   </div>
 </div> 
