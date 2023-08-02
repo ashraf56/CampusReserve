@@ -31,13 +31,13 @@ if (isLoading) {
     return (
         <div className='my-6'>
 
-     <div >
+    { <div >
 
      <div className="hero  card shadow-md bg-gradient-to-r from-[#456fe8] to-[#19b0ec] ">
   <div className="hero-content  flex-col">
 
     <div className='w-5/5 card-body text-white'>
-      <h1 className="text-md md:text-5xl font-bold"> Admission Detail of  {mycollegedata[0]?.candidateName}</h1>
+      <h1 className="text-md md:text-5xl font-bold"> Admission Detail of  {mycollegedata[0]?.candidateName ? mycollegedata[0].candidateName : user?.displayName}</h1>
      
     </div>
   </div>
@@ -80,7 +80,7 @@ if (isLoading) {
 
 
 
-           </div>    
+           </div>   } 
            
            
            

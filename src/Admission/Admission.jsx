@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Apply from './Apply';
 
 const Admission = () => {
-    let {user}=useContext(AuthService)
     let {data:allclgdata=[],isLoading,refetch}=useQuery( 
         ['college'],
        async()=>{
