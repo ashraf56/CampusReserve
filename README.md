@@ -20,8 +20,7 @@ Campus Reserve aims to simplify resource reservation and management on college c
 
 - **Reservation**: Users can make reservations for the resources they need, specifying the date, time, and purpose of the reservation.
 
-- **Reservation Management**: Users can view and manage their existing reservations, including canceling or modifying them if needed.(
- I'm currently working  to bring you an amazing experience. my website is still under development, but i can't wait to share it with you soon! Thank you for your patience and stay tuned for updates.)
+
 
 
 
