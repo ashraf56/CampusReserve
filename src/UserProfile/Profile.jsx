@@ -10,7 +10,7 @@ const Profile = () => {
 
     let {user}=useContext(AuthService)
 let url=`https://campusreserve-server.onrender.com/alluser/${user?.email}`
-    let {data:mydata=[],refetch}=useQuery( 
+    let {data:mydata=[],isLoading,refetch}=useQuery( 
         ['alluser'],
        async()=>{
             let res= await axios.get(url)
@@ -18,7 +18,7 @@ let url=`https://campusreserve-server.onrender.com/alluser/${user?.email}`
             return res.data
             
                 })
-
+               
 
 const { register, formState: { errors }, handleSubmit ,reset ,watch } = useForm();
 const onSubmit = data => {

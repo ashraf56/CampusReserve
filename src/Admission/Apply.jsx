@@ -12,7 +12,7 @@ const Apply = () => {
 
     let {user}=useContext(AuthService)
     let url=`https://campusreserve-server.onrender.com/alluser/${user?.email}`
-        let {data:mydata=[],refetch}=useQuery( 
+        let {data:mydata=[],isLoading,refetch}=useQuery( 
             ['alluser'],
            async()=>{
                 let res= await axios.get(url)
@@ -20,6 +20,11 @@ const Apply = () => {
                 return res.data
                 
                     })
+
+                    if (isLoading) {
+                        return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
+                      
+                      }
                     
     const { register, formState: { errors }, handleSubmit ,reset ,watch } = useForm();
     const onSubmit = data => {

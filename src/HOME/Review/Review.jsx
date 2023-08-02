@@ -19,13 +19,18 @@ const Review = () => {
     },
     slides: { perView: 1 },
   })
-  let {data:reviews=[],refetch}=useQuery( 
+  let {data:reviews=[],isLoading,refetch}=useQuery( 
     ['college'],
    async()=>{
         let res= await axios.get(`https://campusreserve-server.onrender.com/college`)
         return res.data
         
             })
+
+            if (isLoading) {
+              return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
+            
+            }
 
     return (
         <div>

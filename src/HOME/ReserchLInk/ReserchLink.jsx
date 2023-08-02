@@ -3,13 +3,19 @@ import React from 'react';
 import { useQuery } from 'react-query';
 
 const ReserchLink = () => {
-    let {data:reserchlink=[],refetch}=useQuery( 
+    let {data:reserchlink=[],isLoading,refetch}=useQuery( 
         ['college'],
        async()=>{
             let res= await axios.get(`https://campusreserve-server.onrender.com/college`)
             return res.data
             
                 })
+
+    if (isLoading) {
+   return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
+  }
+
+
     return (
         <div className='my-12 p-12  bg-base-200'>
           <h1 className='md:text-4xl uppercase text-center font-extrabold pt-20'>Recommended Research </h1>

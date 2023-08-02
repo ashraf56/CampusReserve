@@ -7,13 +7,17 @@ import { Link } from 'react-router-dom';
 const CollegeCard = () => {
 
     let {user}=useContext(AuthService)
-    let {data:clgdata=[],refetch}=useQuery( 
+    let {data:clgdata=[],isLoading,refetch}=useQuery( 
         ['allcollege'],
        async()=>{
             let res= await axios.get(`https://campusreserve-server.onrender.com/allcollege`)
             return res.data
             
                 })
+                if (isLoading) {
+                  return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
+                
+                }
 
     return (
         <div className='my-12'>

@@ -7,13 +7,17 @@ import Apply from './Apply';
 
 const Admission = () => {
     let {user}=useContext(AuthService)
-    let {data:allclgdata=[],refetch}=useQuery( 
+    let {data:allclgdata=[],isLoading,refetch}=useQuery( 
         ['college'],
        async()=>{
             let res= await axios.get(`https://campusreserve-server.onrender.com/college`)
             return res.data
             
                 })
+                if (isLoading) {
+                  return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
+                
+                }
     return (
         <div>
            <div className='mx-auto justify-center mb-5'>

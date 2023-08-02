@@ -1,16 +1,32 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
 const AllCollege = () => {
-let [Col,setCol]=useState([])
-useEffect(()=>{
-fetch('https://campusreserve-server.onrender.com/college').then(res=> res.json())
-.then(data => {
-  setCol(data)
-})
 
 
-},[])
+  let {data:Col=[],isLoading,refetch}=useQuery( 
+      ['college'],
+     async()=>{
+          let res= await axios.get(`https://campusreserve-server.onrender.com/college`)
+          return res.data
+          
+              })
+              if (isLoading) {
+                return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
+              
+              }
+
+//let [Col,setCol]=useState([])
+// useEffect(()=>{
+// fetch('https://campusreserve-server.onrender.com/college').then(res=> res.json())
+// .then(data => {
+//   setCol(data)
+// })
+
+
+// },[])
 
 
 

@@ -6,7 +6,7 @@ const Protected = ({children}) => {
     let {user ,Loading}=useContext(AuthService)
 
     if (Loading) {
-        return <span className="loading loading-bars loading-lg"></span>
+        return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
     }
     if (user) {
         return  children

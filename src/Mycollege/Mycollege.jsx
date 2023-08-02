@@ -3,12 +3,11 @@ import { AuthService } from '../Auths/AuthProvider/AuthProvider';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { FaAddressCard, FaBook, FaCalendar, FaMessage, FaPhone, FaUser } from 'react-icons/fa6';
-import { useForm } from 'react-hook-form';
 
 const Mycollege = () => {
     let {user}=useContext(AuthService)
     let url=`https://campusreserve-server.onrender.com/mycollege/${user?.email}`
-        let {data:mycollegedata=[],refetch}=useQuery( 
+        let {data:mycollegedata=[],isLoading,refetch}=useQuery( 
             ['mycollege'],
            async()=>{
                 let res= await axios.get(url)
@@ -17,29 +16,17 @@ const Mycollege = () => {
                 
                     })
        
-
-let addReview=(user)=>{
-
-fetch(`https://campusreserve-server.onrender.com/mycollege/${user?.email}`,{
-  method:"PATCH"
-})
-.then(res=> res.json())
-.then(data=>{
-  console.log(data);
-})
+if (isLoading) {
+  return <div className='text-center'><span className="loading loading-infinity loading-lg"></span></div>
 
 }
 
 
-                    const [showInputField, setShowInputField] = useState(false);
-                    const toggleInputField = () => {
-                      setShowInputField(!showInputField);
-                    };
 
- const { register, formState: { errors }, handleSubmit ,reset ,watch } = useForm();
-    const onSubmit = data => {
-      console.log(data);
-    }
+
+                 
+
+ 
 
     return (
         <div className='my-6'>
@@ -77,9 +64,7 @@ fetch(`https://campusreserve-server.onrender.com/mycollege/${user?.email}`,{
     <p className='flex'><FaAddressCard className='w-8'/> <span className='ps-1'></span>{myclg.adress}</p>
     <p className='py-3'><span className='font-bold'>Review:</span>{myclg.review}</p>
    
-        <div className=" justify-start  ">
-        <button className="btn btn-primary  w-4/6"  >Send</button>
-
+        <div className=" justify-start  ">       
     </div>
   </div>
 </div> 
