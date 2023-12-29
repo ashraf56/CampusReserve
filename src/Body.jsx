@@ -10,7 +10,6 @@ const Body = () => {
             <Navber></Navber>
             <Outlet></Outlet>
             <Footer></Footer>
-            
         </div>
     );
 };
